@@ -33,6 +33,8 @@ pub mod net;
 mod queue;
 #[cfg(not(feature = "tee"))]
 pub mod rng;
+#[cfg(feature = "snd")]
+pub mod snd;
 pub mod vsock;
 
 #[cfg(not(feature = "tee"))]
@@ -51,6 +53,8 @@ pub use self::net::Net;
 pub use self::queue::{DescriptorChain, Queue};
 #[cfg(not(feature = "tee"))]
 pub use self::rng::*;
+#[cfg(feature = "snd")]
+pub use self::snd::Snd;
 pub use self::vsock::*;
 
 /// When the driver initializes the device, it lets the device know about the
